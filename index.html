@@ -16,6 +16,9 @@
     <meta property="og:description" content="Strategic portal for infrastructure development and materials manufacturing excellence.">
     <meta property="og:type" content="website">
     
+    <!-- Babel for In-Browser TSX Transpilation -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
@@ -29,16 +32,9 @@
         ::-webkit-scrollbar {
             width: 8px;
         }
-        ::-webkit-scrollbar-track {
-            background: #ebecee;
-        }
-        ::-webkit-scrollbar-thumb {
-            background: #b0b4bd;
-            border-radius: 4px;
-        }
-        ::-webkit-scrollbar-thumb:hover {
-            background: #777d8b;
-        }
+        ::-webkit-scrollbar-track { background: #ebecee; }
+        ::-webkit-scrollbar-thumb { background: #b0b4bd; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #777d8b; }
     </style>
     <script>
         tailwind.config = {
@@ -69,14 +65,18 @@
 <script type="importmap">
 {
   "imports": {
-    "react/": "https://esm.sh/react@^19.2.4/",
     "react": "https://esm.sh/react@^19.2.4",
-    "react-dom/": "https://esm.sh/react-dom@^19.2.4/"
+    "react-dom": "https://esm.sh/react-dom@^19.2.4",
+    "react-dom/client": "https://esm.sh/react-dom@^19.2.4/client",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.4/",
+    "react/": "https://esm.sh/react@^19.2.4/"
   }
 }
 </script>
 </head>
 <body class="bg-brand-white text-brand-primary">
     <div id="root"></div>
+    <!-- Entry Point with Babel transpilation -->
+    <script type="text/babel" data-type="module" data-presets="react,typescript" src="./index.tsx"></script>
 </body>
 </html>

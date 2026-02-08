@@ -1,10 +1,10 @@
 
 import React, { useState, useEffect } from 'react';
-import Header from './components/Header';
-import LayoutSection from './components/LayoutSection';
-import ContentCard from './components/ContentCard';
-import PlaceholderImage from './components/PlaceholderImage';
-import MetaDataPanel from './components/MetaDataPanel';
+import Header from './components/Header.tsx';
+import LayoutSection from './components/LayoutSection.tsx';
+import ContentCard from './components/ContentCard.tsx';
+import PlaceholderImage from './components/PlaceholderImage.tsx';
+import MetaDataPanel from './components/MetaDataPanel.tsx';
 
 // --- Page 1: Home ---
 const HomePage = ({ setPage }: { setPage: (p: string) => void }) => (
@@ -51,7 +51,7 @@ const HomePage = ({ setPage }: { setPage: (p: string) => void }) => (
           { id: 'crushing-screening', title: 'Crushing & Screening Services', desc: 'Professional crushing and screening for quarries, mines, and large-scale infrastructure projects. Mobile and fixed plant solutions.' },
           { id: 'asphalt-manufacturing', title: 'Asphalt Manufacturing', desc: 'Road-authority compliant asphalt production with custom mix capability. From national highways to municipal resurfacing.' },
           { id: 'chrome-concentrate', title: 'Chrome Concentrate Production', desc: 'Beneficiation and processing of chrome ore into consistent, export-grade concentrate. Quality-controlled from feedstock to product.' },
-          { id: 'aggregate-production', title: 'Aggregate Supply (G1–G5)', desc: 'Graded aggregates for base, sub-base, and fill applications. Produced, tested, and delivered to civil engineering standards.' }
+          { id: 'aggregate-production', title: 'Aggregate Supply (G1–G5)', desc: 'Manufacturing of graded stone and sand aggregates for civil construction. All materials are laboratory tested for grading and durability compliance.' }
         ].map((s, idx) => (
           <div 
             key={s.id} 
