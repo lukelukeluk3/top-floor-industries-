@@ -40,7 +40,7 @@ const HomePage = ({ setPage }: { setPage: (p: string) => void }) => (
     <div className="bg-brand-muted border-b border-brand-accent py-12 px-4 md:px-6">
       <div className="max-w-5xl mx-auto text-center">
         <p className="text-brand-primary text-lg md:text-lg leading-relaxed font-medium">
-          TOP FLOOR INDUSTRIES is an infrastructure development and materials manufacturing company specialising in crushing and screening services, asphalt production, chrome concentrate processing, and aggregate supply. We operate modern, high-capacity plant and equipment to deliver consistent material quality at scale — on time, to specification, and in the volumes your project demands.
+          TOP FLOOR INDUSTRIES is an infrastructure development and materials manufacturing company specialising in crushing and screening services, asphalt production, chrome concentrate processing, and aggregate supply. We operate modern, high-capacity plant and equipment to deliver consistent material quality at scale.
         </p>
       </div>
     </div>
@@ -48,9 +48,9 @@ const HomePage = ({ setPage }: { setPage: (p: string) => void }) => (
     <LayoutSection title="Core Services">
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
         {[
-          { id: 'crushing-screening', title: 'Crushing & Screening Services', desc: 'Professional crushing and screening for quarries, mines, and large-scale infrastructure projects. Mobile and fixed plant solutions sized to your operation.' },
-          { id: 'asphalt-manufacturing', title: 'Asphalt Manufacturing', desc: 'Road-authority compliant asphalt production with custom mix capability. From national highways to municipal resurfacing, we manufacture to specification.' },
-          { id: 'chrome-concentrate', title: 'Chrome Concentrate Production', desc: 'Beneficiation and processing of chrome ore into consistent, export-grade concentrate. Quality-controlled from feedstock to final product.' },
+          { id: 'crushing-screening', title: 'Crushing & Screening Services', desc: 'Professional crushing and screening for quarries, mines, and large-scale infrastructure projects. Mobile and fixed plant solutions.' },
+          { id: 'asphalt-manufacturing', title: 'Asphalt Manufacturing', desc: 'Road-authority compliant asphalt production with custom mix capability. From national highways to municipal resurfacing.' },
+          { id: 'chrome-concentrate', title: 'Chrome Concentrate Production', desc: 'Beneficiation and processing of chrome ore into consistent, export-grade concentrate. Quality-controlled from feedstock to product.' },
           { id: 'aggregate-production', title: 'Aggregate Supply (G1–G5)', desc: 'Graded aggregates for base, sub-base, and fill applications. Produced, tested, and delivered to civil engineering standards.' }
         ].map((s, idx) => (
           <div 
@@ -59,67 +59,12 @@ const HomePage = ({ setPage }: { setPage: (p: string) => void }) => (
             onClick={() => setPage(s.id)}
           >
             <h3 className="text-brand-primary font-bold uppercase tracking-wider mb-4 h-12 flex items-center">{s.title}</h3>
-            <p className={`text-base sm:text-xs leading-relaxed mb-6 flex-grow ${idx % 2 === 0 ? 'text-brand-secondary' : 'text-brand-primary'}`}>{s.desc}</p>
+            <p className={`text-sm leading-relaxed mb-6 flex-grow ${idx % 2 === 0 ? 'text-brand-secondary' : 'text-brand-primary'}`}>{s.desc}</p>
             <span className="text-[10px] font-bold uppercase tracking-widest text-brand-primary group-hover:pl-2 transition-all">→ Learn More</span>
           </div>
         ))}
       </div>
     </LayoutSection>
-
-    <section className="bg-brand-primary py-24 px-4 md:px-6 relative">
-      <div className="absolute inset-0 opacity-10 pointer-events-none overflow-hidden">
-         <div className="absolute top-0 right-0 w-64 h-64 border-8 border-brand-accent rounded-full -translate-y-1/2 translate-x-1/2"></div>
-      </div>
-      <div className="max-w-7xl mx-auto relative z-10">
-        <h2 className="text-3xl font-bold text-brand-white uppercase tracking-widest mb-12 text-center">Why Choose TOP FLOOR INDUSTRIES</h2>
-        <p className="text-center text-brand-accent mb-16 max-w-3xl mx-auto text-lg md:text-base">When the margin for error is measured in tonnes and the cost of delay is measured in contract penalties, you need a supply partner that delivers. Here is what sets us apart:</p>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-          {[
-            'Modern, high-capacity plant and equipment built for sustained production runs',
-            'Mobile and fixed crushing solutions deployable to remote or on-site locations',
-            'Consistent material quality backed by grading and laboratory testing',
-            'Reliable turnaround times — we plan around your project schedule, not ours',
-            'Full compliance with industry, safety, and environmental standards',
-            'Scalable supply capacity for projects ranging from local developments to national infrastructure'
-          ].map((v, i) => (
-            <div key={i} className="flex gap-4 items-start bg-brand-white/5 p-6 border border-brand-accent/20">
-              <div className="w-8 h-8 bg-brand-accent shrink-0 flex items-center justify-center text-xs text-brand-primary font-bold">{i+1}</div>
-              <p className="text-base md:text-sm font-semibold text-brand-white leading-snug">{v}</p>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-
-    <LayoutSection title="Industries We Serve">
-      <div className="max-w-4xl mx-auto">
-        <p className="text-brand-secondary mb-12 text-center font-medium text-lg md:text-base">Our materials and services support a wide range of infrastructure and development sectors:</p>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {[
-            { title: 'Road Construction', desc: 'national, provincial, and municipal road networks' },
-            { title: 'Mining Operations', desc: 'haul roads, processing plant feed, and site infrastructure' },
-            { title: 'Civil Infrastructure', desc: 'bridges, dams, bulk earthworks, and water reticulation' },
-            { title: 'Municipal Development', desc: 'township roads, service delivery infrastructure, and public works' },
-            { title: 'Commercial Developments', desc: 'retail parks, industrial estates, and residential complexes' }
-          ].map(ind => (
-            <div key={ind.title} className="flex flex-col border-l-4 border-brand-accent bg-brand-muted p-6 hover:border-brand-primary transition-all">
-              <span className="text-base font-bold text-brand-primary uppercase tracking-widest">{ind.title}</span>
-              <span className="text-sm text-brand-secondary mt-1">{ind.desc}</span>
-            </div>
-          ))}
-        </div>
-      </div>
-    </LayoutSection>
-
-    <section className="bg-brand-primary py-24 px-4 md:px-6 text-brand-white text-center border-t-8 border-brand-accent">
-      <div className="max-w-4xl mx-auto">
-        <h2 className="text-3xl font-bold uppercase tracking-widest mb-6">Let’s build from the ground up.</h2>
-        <p className="text-brand-accent mb-12 text-xl md:text-lg">Whether you need a bulk aggregate supplier, an on-site crushing partner, or a manufacturing solution for your next infrastructure project, we are ready to deliver. Get in touch to discuss your requirements.</p>
-        <div className="flex flex-col sm:flex-row justify-center gap-6">
-          <button onClick={() => setPage('contact-us')} className="bg-brand-white text-brand-primary px-10 py-4 text-sm font-bold uppercase tracking-widest hover:bg-brand-muted transition-all border-b-4 border-brand-accent shadow-lg">Contact Us</button>
-        </div>
-      </div>
-    </section>
   </>
 );
 
@@ -136,44 +81,11 @@ const AboutUsPage = () => (
     <LayoutSection title="Company Overview">
       <div className="max-w-4xl mx-auto space-y-8 text-brand-secondary leading-loose">
         <p className="text-xl font-bold text-brand-primary leading-snug border-l-4 border-brand-accent pl-6 bg-brand-muted/50 py-4">
-          TOP FLOOR INDUSTRIES is an infrastructure development and materials manufacturing company operating across Southern Africa. Founded on the principle that reliable infrastructure begins with reliable materials, we have built our operations around the disciplines that matter most in heavy industry: precision, consistency, and delivery at scale.
+          TOP FLOOR INDUSTRIES is an infrastructure development and materials manufacturing company operating across Southern Africa. Founded on the principle that reliable infrastructure begins with reliable materials.
         </p>
         <p className="text-base">
-          Our core focus areas span crushing and screening services, asphalt manufacturing, chrome concentrate processing, and graded aggregate production. We operate both mobile and fixed plant, giving us the flexibility to service quarries, mining operations, and construction projects wherever they are located.
+          Our core focus areas span crushing and screening services, asphalt manufacturing, chrome concentrate processing, and graded aggregate production. We operate both mobile and fixed plant, giving us the flexibility to service quarries and mining operations wherever they are located.
         </p>
-        <p className="bg-brand-muted p-6 border border-brand-accent font-medium text-brand-primary text-base">
-          We are not a company that trades on promises. We trade on performance. Every tonne we produce, every project we service, and every deadline we meet builds the operational track record that our clients depend on.
-        </p>
-      </div>
-    </LayoutSection>
-
-    <section className="bg-brand-muted py-24 px-4 md:px-6 border-y border-brand-accent">
-      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12">
-        <div className="bg-brand-white p-12 border-l-8 border-brand-primary shadow-xl">
-          <h3 className="text-2xl font-bold text-brand-primary uppercase tracking-widest mb-6">Our Vision</h3>
-          <p className="text-brand-secondary leading-relaxed border-t border-brand-muted pt-6 text-base">To be a leading provider of infrastructure materials and processing solutions in Southern Africa — recognised for operational excellence, consistent quality, and the ability to deliver at the scale that national development demands.</p>
-        </div>
-        <div className="bg-brand-white p-12 border-l-8 border-brand-secondary shadow-xl">
-          <h3 className="text-2xl font-bold text-brand-primary uppercase tracking-widest mb-6">Our Mission</h3>
-          <p className="text-brand-secondary leading-relaxed border-t border-brand-muted pt-6 text-base">To deliver high-quality materials and services that support sustainable infrastructure development through efficient operations, advanced manufacturing processes, and an unwavering commitment to safety and environmental responsibility.</p>
-        </div>
-      </div>
-    </section>
-
-    <LayoutSection title="What Drives Us">
-      <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-8">
-        {[
-          { title: 'Safety First', desc: 'Every operation begins and ends with safety. We maintain a zero-harm culture across all sites, with comprehensive safety protocols, ongoing training, and full compliance with occupational health and safety regulations.' },
-          { title: 'Quality Assurance', desc: 'Our materials are produced to specification and graded to standard. We invest in testing, quality control processes, and plant maintenance to ensure consistency.' },
-          { title: 'Reliability', desc: 'In infrastructure, delays cascade. We plan, resource, and operate to ensure that our commitments translate into consistent, on-time delivery — regardless of project scale.' },
-          { title: 'Environmental Responsibility', desc: 'We recognise that our operations take place in natural environments and that we have a duty to minimise our impact.' },
-          { title: 'Operational Excellence', desc: 'Efficiency is not a slogan — it is an economic necessity. We continuously assess our processes and invest in modern equipment.' }
-        ].map(v => (
-          <div key={v.title} className="flex flex-col bg-brand-white border border-brand-accent p-6 shadow-sm hover:shadow-md transition-all">
-            <h4 className="font-bold text-brand-primary uppercase tracking-widest text-sm mb-4 border-b-2 border-brand-accent pb-2">{v.title}</h4>
-            <p className="text-base sm:text-xs text-brand-secondary leading-loose">{v.desc}</p>
-          </div>
-        ))}
       </div>
     </LayoutSection>
   </>
@@ -210,17 +122,6 @@ const ProjectsPage = () => (
         ))}
       </div>
     </LayoutSection>
-
-    <LayoutSection title="Core Capabilities">
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-        <ContentCard title="High-Capacity Production">
-          Our plant is configured for continuous production runs. We manage the logistics of high-volume aggregate and asphalt supply for Tier-1 contractors and government bodies, ensuring stockpiles are maintained to meet peak demand periods.
-        </ContentCard>
-        <ContentCard title="Strategic Mobility">
-          Our fleet of mobile crushing and screening units can be deployed rapidly to greenfield sites or existing operations. This reduces haulage costs and allows for the processing of on-site materials into engineering-grade products.
-        </ContentCard>
-      </div>
-    </LayoutSection>
   </>
 );
 
@@ -246,20 +147,6 @@ const ContactPage = () => (
             </p>
             <p className="text-brand-primary font-bold mt-4 text-sm">+27 (0) 11 555 0100</p>
           </div>
-          <div>
-            <h3 className="text-xs font-bold uppercase tracking-widest text-brand-primary border-b-2 border-brand-accent pb-2 mb-6">Regional Operations</h3>
-            <p className="text-brand-secondary text-sm leading-relaxed">
-              Southern Region: Cape Town Hub<br />
-              Northern Region: Polokwane Site Office
-            </p>
-          </div>
-          <div>
-            <h3 className="text-xs font-bold uppercase tracking-widest text-brand-primary border-b-2 border-brand-accent pb-2 mb-6">Digital Enquiries</h3>
-            <p className="text-brand-secondary text-sm leading-relaxed">
-              Tenders: tender@topfloorindustries.com<br />
-              Logistics: transport@topfloorindustries.com
-            </p>
-          </div>
         </div>
         
         <div className="lg:col-span-3 bg-brand-muted p-10 border border-brand-accent shadow-xl">
@@ -270,18 +157,6 @@ const ContactPage = () => (
                 <label className="text-[10px] font-bold uppercase tracking-widest text-brand-secondary">Full Name</label>
                 <div className="w-full h-12 bg-brand-white border border-brand-accent px-4 flex items-center text-xs text-brand-accent">Placeholder Input</div>
               </div>
-              <div className="space-y-2">
-                <label className="text-[10px] font-bold uppercase tracking-widest text-brand-secondary">Company</label>
-                <div className="w-full h-12 bg-brand-white border border-brand-accent px-4 flex items-center text-xs text-brand-accent">Placeholder Input</div>
-              </div>
-            </div>
-            <div className="space-y-2">
-                <label className="text-[10px] font-bold uppercase tracking-widest text-brand-secondary">Required Service</label>
-                <div className="w-full h-12 bg-brand-white border border-brand-accent px-4 flex items-center text-xs text-brand-accent">Select Service Model...</div>
-            </div>
-            <div className="space-y-2">
-                <label className="text-[10px] font-bold uppercase tracking-widest text-brand-secondary">Project Description</label>
-                <div className="w-full h-32 bg-brand-white border border-brand-accent p-4 text-xs text-brand-accent">Outline project volumes and delivery timelines...</div>
             </div>
             <button className="w-full bg-brand-primary text-brand-white py-4 font-bold uppercase tracking-widest text-xs border-b-4 border-brand-accent hover:bg-brand-secondary transition-all">
               Submit Enquiry
@@ -293,54 +168,262 @@ const ContactPage = () => (
   </>
 );
 
+// --- Component: Services Overview Content (Enhanced industrial cards) ---
+const ServicesOverviewContent = ({ setPage }: { setPage: (p: string) => void }) => {
+  const serviceCategories = [
+    {
+      id: 'crushing-screening',
+      code: 'DIV-CS',
+      title: 'Crushing & Screening Services',
+      desc: 'Mobile and static crushing solutions for mining and heavy infrastructure. Our high-throughput fleet handles primary, secondary, and tertiary processing requirements.',
+      tags: ['Mobile Plant', 'Jaw/Cone', 'Quarrying'],
+      metric: '500+ Tonnes/hr'
+    },
+    {
+      id: 'asphalt-manufacturing',
+      code: 'DIV-AM',
+      title: 'Asphalt Manufacturing',
+      desc: 'Sourcing and production of high-grade Hot Mix Asphalt (HMA) and specialized road-surfacing materials tailored for national and municipal specifications.',
+      tags: ['HMA Production', 'Mix Design', 'Roads'],
+      metric: 'ISO Certified'
+    },
+    {
+      id: 'chrome-concentrate',
+      code: 'DIV-CC',
+      title: 'Chrome Concentrate Production',
+      desc: 'Expert mineral processing and beneficiation services. We specialize in converting chrome ore into high-yield concentrate for export and smelting markets.',
+      tags: ['Beneficiation', 'Mining', 'Processing'],
+      metric: 'Export Grade'
+    },
+    {
+      id: 'aggregate-production',
+      code: 'DIV-AP',
+      title: 'Aggregate Supply (G1–G5)',
+      desc: 'Manufacturing of graded stone and sand aggregates for civil construction. All materials are laboratory tested for grading and durability compliance.',
+      tags: ['Graded Stones', 'Civil Works', 'Lab Tested'],
+      metric: 'G1-G5 Standards'
+    }
+  ];
+
+  return (
+    <>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-20">
+        {serviceCategories.map((service, idx) => (
+          <div 
+            key={service.id} 
+            onClick={() => setPage(service.id)}
+            className="bg-brand-white border-2 border-brand-accent p-8 relative group cursor-pointer hover:border-brand-primary transition-all shadow-sm hover:shadow-2xl overflow-hidden"
+          >
+            {/* Technical Detail Corner */}
+            <div className="absolute top-0 right-0 bg-brand-muted border-l-2 border-b-2 border-brand-accent px-4 py-2">
+              <span className="text-[9px] font-bold text-brand-primary tracking-widest uppercase">{service.code}</span>
+            </div>
+
+            {/* Industrial Aesthetic Icon/Background */}
+            <div className="absolute bottom-0 right-0 opacity-[0.05] -translate-x-1/2 -translate-y-1/2 select-none pointer-events-none group-hover:scale-110 transition-transform">
+               <span className="text-[14rem] font-bold uppercase tracking-tighter leading-none">{service.id.charAt(0)}</span>
+            </div>
+
+            <div className="relative z-10 flex flex-col h-full">
+              <div className="flex items-center gap-3 mb-6">
+                <div className="w-1.5 h-6 bg-brand-primary"></div>
+                <h3 className="text-xl font-bold text-brand-primary uppercase tracking-tight">{service.title}</h3>
+              </div>
+              
+              <p className="text-brand-secondary text-sm leading-relaxed mb-10 flex-grow">
+                {service.desc}
+              </p>
+
+              <div className="flex flex-wrap gap-2 mb-8">
+                {service.tags.map(tag => (
+                  <span key={tag} className="text-[9px] font-bold uppercase tracking-widest bg-brand-muted text-brand-secondary px-3 py-1 border border-brand-accent/50">
+                    {tag}
+                  </span>
+                ))}
+              </div>
+
+              <div className="mt-auto pt-6 border-t border-brand-muted flex justify-between items-center">
+                <div className="flex flex-col">
+                   <span className="text-[8px] font-bold uppercase text-brand-accent tracking-[0.2em] mb-1">Operational Capacity</span>
+                   <span className="text-xs font-bold text-brand-primary uppercase tracking-widest">{service.metric}</span>
+                </div>
+                <button className="bg-brand-primary text-brand-white px-6 py-3 text-[10px] font-bold uppercase tracking-widest group-hover:bg-brand-secondary transition-all border-b-4 border-brand-accent">
+                   Detailed View +
+                </button>
+              </div>
+            </div>
+            
+            {/* Corner Bracket Accents */}
+            <div className="absolute bottom-4 right-4 w-4 h-4 border-r-2 border-b-2 border-brand-accent group-hover:border-brand-primary transition-colors"></div>
+            <div className="absolute top-4 left-4 w-4 h-4 border-l-2 border-t-2 border-brand-accent group-hover:border-brand-primary transition-colors"></div>
+          </div>
+        ))}
+      </div>
+
+      <div className="bg-brand-primary p-12 text-brand-white border-b-8 border-brand-accent relative">
+         <div className="max-w-4xl mx-auto flex flex-col md:flex-row items-center justify-between gap-8 text-center md:text-left">
+            <div>
+               <h3 className="text-2xl font-bold uppercase tracking-widest mb-2">Technical Consultancy</h3>
+               <p className="text-brand-accent text-sm leading-relaxed">Our engineering team provides comprehensive material assessment and production planning for large-scale operations.</p>
+            </div>
+            <button onClick={() => setPage('contact-us')} className="shrink-0 bg-brand-white text-brand-primary px-10 py-4 font-bold uppercase tracking-widest text-xs border-b-4 border-brand-accent hover:bg-brand-muted transition-all">
+               Speak to an Engineer
+            </button>
+         </div>
+      </div>
+    </>
+  );
+};
+
+// --- Detailed Service Component: Crushing & Screening ---
+const CrushingScreeningContent = () => (
+  <>
+    <LayoutSection title="Core Capabilities">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+        <div className="space-y-6">
+          <p className="text-brand-secondary leading-relaxed">
+            TOP FLOOR INDUSTRIES provides end-to-end crushing and screening solutions for some of the most demanding infrastructure and mining projects in Southern Africa. Our fleet consists of state-of-the-art mobile and modular units.
+          </p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            {[
+              { title: 'Mobile Crushing Units', detail: 'Rapid-deployment Jaw and Cone crushers for on-site material processing.' },
+              { title: 'Vibrating Screen Decks', detail: 'Multi-stage screening for precise particle size distribution to G1-G7 standards.' },
+              { title: 'Bulk Stockpiling', detail: 'Automated conveyor systems for massive volume management.' },
+              { title: 'Mineral Beneficiation', detail: 'Primary and secondary crushing for mining ore, optimized for downstream processing.' }
+            ].map(cap => (
+              <div key={cap.title} className="bg-brand-white p-5 border border-brand-accent/30 shadow-sm border-l-4 border-brand-primary">
+                <h4 className="text-xs font-bold uppercase tracking-widest text-brand-primary mb-2">{cap.title}</h4>
+                <p className="text-[11px] text-brand-secondary leading-relaxed">{cap.detail}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+        <PlaceholderImage height="h-full min-h-[400px]" label="Primary Crusher Site" />
+      </div>
+    </LayoutSection>
+
+    <div className="bg-brand-muted py-20 px-4 md:px-6 border-y border-brand-accent">
+      <div className="max-w-7xl mx-auto">
+        <h2 className="text-2xl font-bold uppercase tracking-tighter text-brand-primary mb-12 flex items-center gap-4">
+          <div className="w-2 h-6 bg-brand-primary"></div>
+          Strategic Applications
+        </h2>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {[
+            { title: 'Mining Operations', icon: 'M', desc: 'Processing of overburden and ore feed. We operate under strict MQA safety standards.' },
+            { title: 'Road Infrastructure', icon: 'R', desc: 'Manufacturing of high-grade road stones and aggregates for highways.' },
+            { title: 'Civil Construction', icon: 'C', desc: 'Custom aggregate mixes for dams and commercial foundations.' }
+          ].map(app => (
+            <div key={app.title} className="bg-brand-white p-8 border border-brand-accent relative overflow-hidden group">
+              <div className="absolute top-0 right-0 p-4 text-4xl font-bold text-brand-muted group-hover:text-brand-accent/20 transition-colors">{app.icon}</div>
+              <h3 className="text-sm font-bold uppercase tracking-widest text-brand-primary mb-4">{app.title}</h3>
+              <p className="text-xs text-brand-secondary leading-loose">{app.desc}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+
+    <LayoutSection title="Process Workflow">
+      <div className="grid grid-cols-1 md:grid-cols-4 gap-2 relative">
+        <div className="hidden md:block absolute top-1/2 left-0 w-full h-0.5 bg-brand-accent/30 -translate-y-1/2 z-0"></div>
+        {[
+          { step: '01', title: 'Site Assessment', desc: 'Geological analysis and logistical mapping.' },
+          { step: '02', title: 'Mobilization', desc: 'Rapid deployment of modular circuits.' },
+          { step: '03', title: 'Production & QC', desc: 'Continuous processing with lab testing.' },
+          { step: '04', title: 'Load & Logistics', desc: 'Stockpile management and coordinated load-out.' }
+        ].map((item, idx) => (
+          <div key={item.step} className="bg-brand-white border border-brand-accent p-6 z-10 flex flex-col items-center text-center hover:shadow-xl transition-all group">
+            <div className="w-12 h-12 bg-brand-primary text-brand-white flex items-center justify-center font-bold text-lg mb-4 border-b-4 border-brand-accent">
+              {item.step}
+            </div>
+            <h4 className="text-xs font-bold uppercase tracking-widest text-brand-primary mb-3">{item.title}</h4>
+            <p className="text-[11px] text-brand-secondary leading-relaxed">{item.desc}</p>
+          </div>
+        ))}
+      </div>
+    </LayoutSection>
+  </>
+);
+
 // --- Page 5: Generic Service Detail ---
-const ServiceDetailPage = ({ id }: { id: string }) => {
+const ServiceDetailPage = ({ id, setPage }: { id: string, setPage: (p: string) => void }) => {
   const serviceMap: Record<string, any> = {
-    'crushing-screening': { title: 'Crushing & Screening Services', subtitle: 'Mobile & Fixed Plant Processing' },
+    'crushing-screening': { 
+        title: 'Crushing & Screening Services', 
+        subtitle: 'High-Throughput Material Processing',
+        detail: <CrushingScreeningContent />
+    },
     'asphalt-manufacturing': { title: 'Asphalt Manufacturing', subtitle: 'HMA & Cold-Mix Solutions' },
     'chrome-concentrate': { title: 'Chrome Concentrate Production', subtitle: 'Mineral Processing & Beneficiation' },
     'aggregate-production': { title: 'Aggregate Supply (G1–G5)', subtitle: 'Sub-base & Road Construction Materials' },
-    'services-overview': { title: 'Operational Overview', subtitle: 'Full Infrastructure Capability' },
+    'services-overview': { 
+        title: 'Our Divisions', 
+        subtitle: 'Specialized Industrial Capability',
+        detail: <ServicesOverviewContent setPage={setPage} />
+    },
   };
 
   const current = serviceMap[id] || serviceMap['services-overview'];
 
   return (
     <>
-      <div className="bg-brand-primary py-16 text-brand-white border-b-8 border-brand-accent">
-        <div className="max-w-7xl mx-auto px-4 md:px-6">
+      <div className="bg-brand-primary py-16 text-brand-white border-b-8 border-brand-accent relative overflow-hidden">
+        <div className="max-w-7xl mx-auto px-4 md:px-6 relative z-10">
           <h1 className="text-4xl font-bold uppercase tracking-widest mb-4">{current.title}</h1>
           <p className="text-brand-accent text-sm font-bold uppercase tracking-[0.2em]">{current.subtitle}</p>
         </div>
+        <div className="absolute inset-0 opacity-10 flex items-center justify-end pointer-events-none">
+            <div className="text-[12rem] font-bold uppercase select-none translate-x-1/4 translate-y-1/4">TFI</div>
+        </div>
       </div>
       
-      <LayoutSection title="Service Specifications">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
-          <div className="space-y-8">
-            <h3 className="text-2xl font-bold text-brand-primary uppercase tracking-tighter">High-Performance Output</h3>
-            <p className="text-brand-secondary text-base leading-relaxed">
-              We leverage the latest in industrial automation and heavy-duty processing equipment to ensure that every metric tonne produced meets the rigorous standards of modern infrastructure. Our quality control cycle is integrated into the production line, with regular material sampling and laboratory verification.
-            </p>
-            <div className="grid grid-cols-2 gap-4">
-              <div className="p-4 bg-brand-muted border-l-4 border-brand-accent">
-                <span className="block text-2xl font-bold text-brand-primary">100%</span>
-                <span className="text-[10px] font-bold uppercase text-brand-secondary">Compliance Rate</span>
-              </div>
-              <div className="p-4 bg-brand-muted border-l-4 border-brand-accent">
-                <span className="block text-2xl font-bold text-brand-primary">24/7</span>
-                <span className="text-[10px] font-bold uppercase text-brand-secondary">Production Capability</span>
+      {current.detail ? current.detail : (
+        <LayoutSection title="Technical Overview">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+            <div className="space-y-8">
+              <h3 className="text-2xl font-bold text-brand-primary uppercase tracking-tighter">Industrial Scale Output</h3>
+              <p className="text-brand-secondary text-base leading-relaxed">
+                We leverage the latest in industrial automation and heavy-duty processing equipment to ensure that every metric tonne produced meets the rigorous standards of modern infrastructure.
+              </p>
+              <div className="grid grid-cols-2 gap-4">
+                <div className="p-4 bg-brand-muted border-l-4 border-brand-accent">
+                  <span className="block text-2xl font-bold text-brand-primary">100%</span>
+                  <span className="text-[10px] font-bold uppercase text-brand-secondary">Compliance</span>
+                </div>
+                <div className="p-4 bg-brand-muted border-l-4 border-brand-accent">
+                  <span className="block text-2xl font-bold text-brand-primary">24/7</span>
+                  <span className="text-[10px] font-bold uppercase text-brand-secondary">Operations</span>
+                </div>
               </div>
             </div>
+            <PlaceholderImage height="h-[500px]" label={`${current.title} Division`} />
           </div>
-          <PlaceholderImage height="h-[500px]" label={`${current.title} Asset`} />
-        </div>
-      </LayoutSection>
+        </LayoutSection>
+      )}
     </>
   );
 };
 
 const App: React.FC = () => {
-  const [currentPage, setCurrentPage] = useState('home');
+  const [currentPage, setCurrentPage] = useState(() => {
+    const hash = window.location.hash.replace('#', '');
+    return hash || 'home';
+  });
+
+  const navigate = (page: string) => {
+    window.location.hash = page;
+    setCurrentPage(page);
+  };
+
+  useEffect(() => {
+    const handleHashChange = () => {
+      const hash = window.location.hash.replace('#', '');
+      setCurrentPage(hash || 'home');
+    };
+    window.addEventListener('hashchange', handleHashChange);
+    return () => window.removeEventListener('hashchange', handleHashChange);
+  }, []);
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -348,7 +431,7 @@ const App: React.FC = () => {
 
   const renderPage = () => {
     switch (currentPage) {
-      case 'home': return <HomePage setPage={setCurrentPage} />;
+      case 'home': return <HomePage setPage={navigate} />;
       case 'about-us': return <AboutUsPage />;
       case 'projects-capabilities': return <ProjectsPage />;
       case 'contact-us': return <ContactPage />;
@@ -357,19 +440,17 @@ const App: React.FC = () => {
       case 'asphalt-manufacturing':
       case 'chrome-concentrate':
       case 'aggregate-production':
-        return <ServiceDetailPage id={currentPage} />;
-      default: return <HomePage setPage={setCurrentPage} />;
+        return <ServiceDetailPage id={currentPage} setPage={navigate} />;
+      default: return <HomePage setPage={navigate} />;
     }
   };
 
   return (
     <div className="min-h-screen flex flex-col bg-brand-white">
-      <Header setPage={setCurrentPage} currentPage={currentPage} />
-      
+      <Header setPage={navigate} currentPage={currentPage} />
       <main className="flex-grow">
         {renderPage()}
       </main>
-
       <footer className="bg-brand-primary text-brand-white py-20 px-4 md:px-6 border-t-8 border-brand-secondary">
         <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12">
           <div>
@@ -377,32 +458,27 @@ const App: React.FC = () => {
             <p className="text-brand-accent text-base md:text-sm leading-relaxed">Infrastructure Development & Materials Manufacturing. Leading precision engineering since 1998.</p>
           </div>
           <div>
-             <h4 className="text-[10px] font-bold uppercase tracking-widest text-brand-accent mb-6 border-b border-brand-accent/30 pb-2">Menu</h4>
+             <h4 className="text-[10px] font-bold uppercase tracking-widest text-brand-accent mb-6 border-b border-brand-accent/30 pb-2">Navigation</h4>
              <ul className="space-y-3 text-sm md:text-xs uppercase tracking-widest font-semibold">
-                <li className="cursor-pointer hover:text-brand-accent transition-colors" onClick={() => setCurrentPage('home')}>Home</li>
-                <li className="cursor-pointer hover:text-brand-accent transition-colors" onClick={() => setCurrentPage('about-us')}>About</li>
-                <li className="cursor-pointer hover:text-brand-accent transition-colors" onClick={() => setCurrentPage('services-overview')}>Services</li>
-                <li className="cursor-pointer hover:text-brand-accent transition-colors" onClick={() => setCurrentPage('projects-capabilities')}>Projects</li>
-                <li className="cursor-pointer hover:text-brand-accent transition-colors" onClick={() => setCurrentPage('contact-us')}>Contact</li>
+                <li className="cursor-pointer hover:text-brand-accent transition-colors" onClick={() => navigate('home')}>Home</li>
+                <li className="cursor-pointer hover:text-brand-accent transition-colors" onClick={() => navigate('about-us')}>About</li>
+                <li className="cursor-pointer hover:text-brand-accent transition-colors" onClick={() => navigate('services-overview')}>Services</li>
+                <li className="cursor-pointer hover:text-brand-accent transition-colors" onClick={() => navigate('projects-capabilities')}>Projects</li>
+                <li className="cursor-pointer hover:text-brand-accent transition-colors" onClick={() => navigate('contact-us')}>Contact</li>
              </ul>
           </div>
           <div>
-             <h4 className="text-[10px] font-bold uppercase tracking-widest text-brand-accent mb-6 border-b border-brand-accent/30 pb-2">Stay Connected</h4>
-             <p className="text-sm md:text-xs text-brand-accent mb-4">Receive industrial insights and quarterly updates.</p>
+             <h4 className="text-[10px] font-bold uppercase tracking-widest text-brand-accent mb-6 border-b border-brand-accent/30 pb-2">Inquiries</h4>
+             <p className="text-sm md:text-xs text-brand-accent mb-4">Subscribe for technical bulletins and news.</p>
              <div className="flex border-b-2 border-brand-accent pb-2 mt-4">
-                <input type="email" placeholder="Email Address" className="bg-transparent text-sm md:text-xs w-full outline-none text-brand-white placeholder:text-brand-secondary" />
+                <input type="email" placeholder="Corporate Email" className="bg-transparent text-sm md:text-xs w-full outline-none text-brand-white placeholder:text-brand-secondary" />
                 <button className="text-[10px] font-bold uppercase text-brand-accent hover:text-brand-white transition-colors">Join</button>
              </div>
           </div>
         </div>
         <div className="max-w-7xl mx-auto mt-20 pt-8 border-t border-brand-accent/20 flex flex-col md:flex-row justify-between items-center gap-6">
           <div className="text-brand-accent text-[10px] uppercase tracking-widest text-center md:text-left">
-            &copy; 2026 TOP FLOOR INDUSTRIES. All Rights Reserved. ISO 9001:2015.
-          </div>
-          <div className="flex flex-wrap justify-center gap-6 md:gap-8 text-[10px] uppercase tracking-widest text-brand-secondary">
-            <span className="cursor-pointer hover:text-white transition-colors">Safety Portal</span>
-            <span className="cursor-pointer hover:text-white transition-colors">Privacy Policy</span>
-            <span className="cursor-pointer hover:text-white transition-colors">Terms of Supply</span>
+            &copy; 2026 TOP FLOOR INDUSTRIES. ISO 9001:2015 Registered.
           </div>
         </div>
       </footer>

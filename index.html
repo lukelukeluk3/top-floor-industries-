@@ -4,7 +4,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Top Floor Industries</title>
+    <title>Top Floor Industries | Infrastructure & Manufacturing</title>
+    
+    <!-- Professional Meta Tags -->
+    <meta name="description" content="TOP FLOOR INDUSTRIES: Leading Infrastructure Development and Materials Manufacturing in Southern Africa. Specializing in Crushing, Screening, Asphalt, and Mineral Processing.">
+    <meta name="keywords" content="Infrastructure, Manufacturing, Crushing, Screening, Asphalt, Mining, Southern Africa, Engineering">
+    <meta name="author" content="Top Floor Industries">
+    
+    <!-- OpenGraph for Professional Sharing -->
+    <meta property="og:title" content="Top Floor Industries - Infrastructure Portal">
+    <meta property="og:description" content="Strategic portal for infrastructure development and materials manufacturing excellence.">
+    <meta property="og:type" content="website">
+    
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
@@ -12,6 +23,7 @@
             font-family: 'Inter', sans-serif;
             background-color: #ffffff;
             color: #3b4858;
+            scroll-behavior: smooth;
         }
         /* Custom scrollbar for professional look */
         ::-webkit-scrollbar {
@@ -39,6 +51,15 @@
                             accent: '#b0b4bd',
                             muted: '#ebecee',
                             white: '#ffffff'
+                        }
+                    },
+                    animation: {
+                        'fade-in': 'fadeIn 0.5s ease-out forwards',
+                    },
+                    keyframes: {
+                        fadeIn: {
+                            '0%': { opacity: '0', transform: 'translateY(10px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
                         }
                     }
                 }
